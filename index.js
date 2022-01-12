@@ -307,21 +307,23 @@ Use the getRandomFlavors function and new arrays below to do the following:
 
   For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
-regionalFlavor
 
-function getRandomFlavors(array1, array2, array3, array4){
+
+function getRandomFlavors(arr1,arr2,arr3,arr4){
   let randomlyPicked = [];
 
-  if (randomlyPicked.length != 31) {
-    randomlyPicked.push(array1[Math.random(0, array1.length)])
-    randomlyPicked.push(array2[Math.random(0, array2.length)])
-    randomlyPicked.push(array3[Math.random(0, array3.length)])
-    randomlyPicked.push(array4[Math.random(0, array4.length)])
-  } else {
-    return randomlyPicked
-  }
-}
+  let options = [arr1,arr2,arr3,arr4];
 
+  let randomOption = options[Math.floor(Math.random() * options.length)];
+
+  for (let i = 0;i != 31; i++) {
+    if (randomlyPicked.length != 31) {
+      randomlyPicked.push(randomOption[Math.floor(Math.random() * randomOption.length)])
+      console.log("121312")
+    }
+  }
+  return randomlyPicked
+}
 console.log("stretch 2 ", getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors))
 
 
